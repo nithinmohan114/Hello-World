@@ -6,7 +6,8 @@ test:
   - apt-get install python3
   - apt-get install -y python-dev python-pip
   - pip install django
-  - python manage.py test
+  - apt-get install python
+  - pytest
 
 # staging:
 #   type: deploy
