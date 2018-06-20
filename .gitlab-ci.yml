@@ -8,5 +8,5 @@ Test:
   - pip install django
   - apt-get install python
   - pip install pytest
-  - pytest
+  - pytest myapp/
 
