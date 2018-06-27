@@ -4,12 +4,11 @@ services:
 variables:
   POSTGRES_DB: helloworld_test
   POSTGRES_USER: posgtres
-  POSTGRES_PASSWORD: postgrespasswordforentri
+  POSTGRES_PASSWORD: password
 
 Test:
   variables:
-    DATABASE_URL: postgres://postgres:postgrespasswordforentri@postgres:5432/helloworld_test
-    # DJANGO_SETTINGS_MODULE: entri.entri.settings.base 
+    DATABASE_URL: postgres://postgres:password@postgres:5432/helloworld_test
   script:
   - apt-get update -qy
   - apt-get install -y python-dev python-pip
