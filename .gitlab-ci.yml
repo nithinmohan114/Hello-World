@@ -8,5 +8,5 @@ Test:
   - pip install django
   - apt-get install python
   - pip install pytest
-  - pytest my_app/tests.py
+  - pytest my_app/test_sample.py
 
