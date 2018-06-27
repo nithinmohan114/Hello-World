@@ -1,12 +1,19 @@
-Test:
-  script:
-  # this configures Django application to use attached postgres database that is run on `postgres` host
-  # - export DATABASE_URL=postgres://postgres:@postgres:5432/python-test-app
-  - apt-get update -qy
-  - apt-get install python3
-  - apt-get install -y python-dev python-pip
-  - pip install django
-  - apt-get install python
-  - pip install pytest
-  - pytest my_app/test_sample.py
+services:
+  - postgres:latest
 
+variables:
+  POSTGRES_DB: helloworld_test
+  POSTGRES_USER: posgtres
+  POSTGRES_PASSWORD: postgrespasswordforentri
+
+Test:
+  variables:
+    DATABASE_URL: postgres://postgres:postgrespasswordforentri@postgres:5432/helloworld_test
+    # DJANGO_SETTINGS_MODULE: entri.entri.settings.base 
+  script:
+  - apt-get update -qy
+  - apt-get install -y python-dev python-pip
+  - pip install -r deployment/pip/deploy.txt
+  - cd entri/
+  # - pwd
+  - pytest my_app/test_sample.py
