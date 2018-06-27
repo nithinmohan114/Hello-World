@@ -1,7 +1,6 @@
 
 from my_app.models import Line
-import django
-django.setup()
+
 
 def test_sample():
     assert 1 == 1
