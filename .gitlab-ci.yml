@@ -13,7 +13,6 @@ Test:
   script:
   - apt-get update -qy
   - apt-get install -y python-dev python-pip
-  - pip install -r deployment/pip/deploy.txt
-  - cd entri/
-  # - pwd
+  - pip install django
+  - pip install pytest
   - pytest my_app/test_sample.py
