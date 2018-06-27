@@ -9,6 +9,7 @@ variables:
 Test:
   variables:
     DATABASE_URL: postgres://postgres:password@postgres:5432/helloworld_test
+    DJANGO_SETTINGS_MODULE: helloworld_project.settings 
   script:
   - apt-get update -qy
   - apt-get install -y python-dev python-pip
